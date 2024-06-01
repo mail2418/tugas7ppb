@@ -80,7 +80,6 @@ fun GameScreen() {
         )
         GameLayout(
             onUserGuessChanged = { gameViewModel.updateUserGuess(it) },
-            onKeyboardDone = { gameViewModel.checkUserGuess() },
             userGuess = gameViewModel.userGuess,
             currentScrambledWord = gameUiState.currentScrambledWord,
             isGuessWrong = gameUiState.isGuessedWordWrong,
@@ -148,8 +147,7 @@ fun GameLayout(currentScrambledWord: String,
                modifier: Modifier = Modifier,
                isGuessWrong: Boolean,
                wordCount: Int,
-               onUserGuessChanged: (String) -> Unit,
-               onKeyboardDone: () -> Unit) {
+               onUserGuessChanged: (String) -> Unit {
     val mediumPadding = dimensionResource(R.dimen.padding_medium)
 
     Card(
