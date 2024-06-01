@@ -147,7 +147,7 @@ fun GameLayout(currentScrambledWord: String,
                modifier: Modifier = Modifier,
                isGuessWrong: Boolean,
                wordCount: Int,
-               onUserGuessChanged: (String) -> Unit {
+               onUserGuessChanged: (String) -> Unit) {
     val mediumPadding = dimensionResource(R.dimen.padding_medium)
 
     Card(
